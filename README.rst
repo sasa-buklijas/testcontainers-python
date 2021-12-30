@@ -30,6 +30,8 @@ Currently available features:
 * OpenSearch container
 * OracleDb container
 * PostgreSQL Db container
+* Scylladb container
+* Cassandra container
 * RabbitMQ container
 * Redis container
 * Selenium Grid container

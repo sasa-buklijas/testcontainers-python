@@ -68,6 +68,9 @@ jobs:
           - arangodb.py
           - azurite.py
           - opensearch.py
+          - scylla.py
+          - cassandra.py
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

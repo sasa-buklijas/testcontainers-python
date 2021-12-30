@@ -36,6 +36,8 @@ bleach==5.0.1
     # via readme-renderer
 cachetools==5.2.0
     # via google-auth
+cassandra-driver==3.25.0
+    # via testcontainers
 certifi==2022.12.7
     # via
     #   minio
@@ -49,6 +51,8 @@ cffi==1.15.1
     #   pynacl
 charset-normalizer==2.1.1
     # via requests
+click==8.1.3
+    # via geomet
 clickhouse-driver==0.2.5
     # via testcontainers
 codecov==2.1.12
@@ -97,6 +101,10 @@ exceptiongroup==1.0.4
     #   trio
 flake8==3.7.9
     # via -r requirements.in
+geomet==0.2.1.post1
+    # via
+    #   cassandra-driver
+    #   scylla-driver
 google-api-core[grpc]==2.11.0
     # via google-cloud-pubsub
 google-auth==2.15.0
@@ -231,7 +239,7 @@ pytest==7.2.0
     #   pytest-cov
 pytest-cov==4.0.0
     # via -r requirements.in
-python-arango==7.5.3
+python-arango==7.5.4
     # via testcontainers
 python-dateutil==2.8.2
     # via pg8000
@@ -249,7 +257,9 @@ pytz==2022.6
 pytz-deprecation-shim==0.1.0.post0
     # via tzlocal
 pyyaml==5.4.1
-    # via docker-compose
+    # via
+    #   docker-compose
+    #   scylla-driver
 readme-renderer==37.3
     # via twine
 redis==4.4.0
@@ -286,6 +296,8 @@ rsa==4.9
     #   python-jose
 scramp==1.4.4
     # via pg8000
+scylla-driver==3.25.10
+    # via testcontainers
 secretstorage==3.3.3
     # via keyring
 selenium==4.7.2
@@ -294,13 +306,16 @@ six==1.16.0
     # via
     #   azure-core
     #   bleach
+    #   cassandra-driver
     #   dockerpty
     #   ecdsa
+    #   geomet
     #   google-auth
     #   isodate
     #   jsonschema
     #   paramiko
     #   python-dateutil
+    #   scylla-driver
     #   websocket-client
 sniffio==1.3.0
     # via trio
@@ -322,7 +337,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sqlalchemy==1.4.44
+sqlalchemy==1.4.45
     # via testcontainers
 texttable==1.6.7
     # via docker-compose
