@@ -3,8 +3,7 @@ from testcontainers.scylla import ScyllaContainer
 
 def test_docker_run_scylla():
     with ScyllaContainer() as scylla:
-        cluster = scylla.get_cluster()
-        with cluster.connect() as session:
+        with scylla.get_cluster() as cluster, cluster.connect() as session:
             session.execute(
                 "CREATE KEYSPACE keyspace1 WITH replication = "
                 "{'class': 'SimpleStrategy', 'replication_factor': '1'};"

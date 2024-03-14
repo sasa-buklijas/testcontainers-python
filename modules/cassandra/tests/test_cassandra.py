@@ -1,10 +1,12 @@
+import pytest
+
 from testcontainers.cassandra import CassandraContainer
 
 
-def test_docker_run_cassandra():
-    with CassandraContainer() as cassandra:
-        cluster = cassandra.get_cluster()
-        with cluster.connect() as session:
+@pytest.mark.parametrize("version", ["3.11.6", "4.1.4"], ids=["3.11.6", "4.1.4"])
+def test_docker_run_cassandra(version):
+    with CassandraContainer(image=f"cassandra:{version}") as cassandra:
+        with cassandra.get_cluster() as cluster, cluster.connect() as session:
             session.execute(
                 "CREATE KEYSPACE keyspace1 WITH replication = "
                 "{'class': 'SimpleStrategy', 'replication_factor': '1'};"
